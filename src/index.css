@@ -1,0 +1,19 @@
+:root{
+    --global-background-color: #F5F5DC;
+    --global-title-color: #D2B48C;
+    --jaune-ble:#F5DEB3;
+    --light-orange:#FFA500;
+    --decalage: 20px;
+    --img-margin: calc(var(--decalage)/2);
+}
+
+body{
+    background-color : var(--global-background-color)
+}
+
+    h1{
+    font-family: 'Playfair Display', serif;
+    color: var(--global-title-color);
+    font-size: 40px;
+}
+

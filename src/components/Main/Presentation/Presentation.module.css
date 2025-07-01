@@ -1,0 +1,8 @@
+
+
+.presentation img{
+    width: calc(100% - var(--decalage));
+    margin-left: var(--img-margin);
+    height: 60em;
+    text-align: center;
+}

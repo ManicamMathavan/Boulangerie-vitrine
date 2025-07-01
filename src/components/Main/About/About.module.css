@@ -1,0 +1,24 @@
+
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap : 50px;
+}
+
+.about h1{
+    justify-content: center;
+}
+
+.about .aboutContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:500px
+}
+
+.about p{
+    font-family: 'Open Sans', sans-serif;
+    color: var(--global-title-color);
+    font-size: 20px;
+}
