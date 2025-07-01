@@ -16,9 +16,3 @@
     align-items: center;
     width:500px
 }
-
-.about p{
-    font-family: 'Open Sans', sans-serif;
-    color: var(--global-title-color);
-    font-size: 20px;
-}

@@ -5,6 +5,13 @@
     --light-orange:#FFA500;
     --decalage: 20px;
     --img-margin: calc(var(--decalage)/2);
+
+}
+
+.pProperty {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--global-title-color);
+    font-size: 20px;
 }
 
 body{

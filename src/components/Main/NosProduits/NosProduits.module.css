@@ -5,12 +5,27 @@
 
 .nosProduits p {
     size: 200px;
+    font-family: var(--p-font);
+    
 }
 
 .produitDescription {
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    background-color: rgb(0, 0, 0);
-    color: var(--global-background-color)
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.produits{
+    display: flex ;
+    box-sizing: border-box;
+    /* width: fit-content; */
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap:wrap;
+    /* flex: 1 1 100px; */
+    /* grid-template-rows: repeat(2, 1fr); */
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
 }

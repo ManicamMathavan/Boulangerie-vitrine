@@ -9,7 +9,7 @@ function About() {
         <div className={style.aboutContent}>
            
             <h1>À Propos</h1>
-              <p>
+              <p className="pProperty">
                 Depuis plus de vingt ans, la boulangerie Dego perpétue une tradition
                 familiale passionnée par l’art du pain. Fondée au cœur de notre village,
                 elle est née d’un rêve : offrir des pains authentiques, préparés avec
