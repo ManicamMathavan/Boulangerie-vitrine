@@ -3,20 +3,22 @@
     background-color: #D2B48C;
     display: flex;
     padding: 10px;
+    margin-bottom: 50px;
     align-items: center;
 }
 
-.header .rightContent{
+/* .header .rightContent{
     margin-left: auto;
     display: flex;
     gap: 25px;
     margin-right: 10px;
     align-content: baseline;
-}
+} */
 
 .header .leftContent{
+    width: 100vw;
     display: flex;
-    justify-content: end;
+    /* justify-content: end; */
     gap: 20px;
     margin-right: 20px;
     align-items: center;
@@ -32,5 +34,6 @@ font-size: 23px;
     font-family: 'Cormorant Garamond', serif;
     color: var(--global-background-color);
     font-size: 40px;
+    text-align: center;
 }
 

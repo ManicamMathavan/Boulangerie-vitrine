@@ -1,0 +1,20 @@
+.avis h2 {
+    text-align: center;
+    color: var(--global-background-color);
+}
+
+.avis p {
+    color: var(--global-background-color);
+    font-size: 20px;
+}
+
+.avis{
+    text-align: center;
+    background: var(--light-orange);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width :400px;
+    height:300px;
+    border-radius: 10px;
+}

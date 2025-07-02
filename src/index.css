@@ -14,11 +14,15 @@
     font-size: 20px;
 }
 
+.textProperty {
+    font-family: 'Open Sans', sans-serif;
+}
+
 body{
     background-color : var(--global-background-color)
 }
 
-    h1{
+.title{
     font-family: 'Playfair Display', serif;
     color: var(--global-title-color);
     font-size: 40px;

@@ -1,0 +1,58 @@
+
+const positionIcon = ({width, height} : {width:number, height:number}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    enableBackground="new 0 0 1273 1920"
+    viewBox="0 150 1273 1920"
+    width={width}
+    height={height}
+  >
+    <path
+      fill="#FFA500"
+      d="M653.54 143.43c-292.64 0-529.87 237.23-529.87 529.87 0 116.88 37.87 224.89 101.97 312.51l427.9 690.23 427.9-690.23c64.099-87.617 101.97-195.63 101.97-312.51-.001-292.64-237.23-529.87-529.87-529.87m0 753.42c-146.5 0-265.26-118.76-265.26-265.26s118.76-265.26 265.26-265.26S918.8 485.09 918.8 631.59 800.04 896.85 653.54 896.85"
+    ></path>
+    <defs>
+      <filter
+        id="b"
+        // width="376.89"
+        // height="92.661"
+        x="465.1"
+        y="1683.9"
+        filterUnits="userSpaceOnUse"
+      >
+        <feFlood floodColor="#fff" result="back"></feFlood>
+        <feBlend in="SourceGraphic" in2="back"></feBlend>
+      </filter>
+    </defs>
+    <mask
+      id="a"
+      width="376.892"
+      height="92.661"
+      x="465.098"
+      y="1683.91"
+      maskUnits="userSpaceOnUse"
+    >
+      <g filter="url(#b)">
+        <image
+          xlinkHref="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgEASABIAAD/7AARRHVja3kAAQAEAAAAHgAA/+4AIUFkb2JlAGTAAAAAAQMA EAMCAwYAAAMZAAAGAAAAB4z/2wCEABALCwsMCxAMDBAXDw0PFxsUEBAUGx8XFxcXFx8eFxoaGhoX Hh4jJSclIx4vLzMzLy9AQEBAQEBAQEBAQEBAQEABEQ8PERMRFRISFRQRFBEUGhQWFhQaJhoaHBoa JjAjHh4eHiMwKy4nJycuKzU1MDA1NUBAP0BAQEBAQEBAQEBAQP/CABEIAGMBfgMBIgACEQEDEQH/ xACHAAADAQEBAQAAAAAAAAAAAAAAAQIDBAUGAQEAAAAAAAAAAAAAAAAAAAAAEAACAQMEAgMBAQEA AAAAAAAAAQISAxMRBBQlNQYQIDAFcBURAAEDAwQCAQQDAAAAAAAAAAABApIzRaVQA7MFEnQRURME FCEiUxIBAAAAAAAAAAAAAAAAAAAAcP/aAAwDAQACEQMRAAAA+S4OzzzQzDQzDQzDQzDQhlCYFMh3 RkasxewYm4YG4c5uGBsjJaozLkQIZKLMw0Mw0Mw0Mw0Mw9Dz/Q88AYiqIetmN70YXvZz10Uc76Wc 76KOZ9Icz6Q5jpZynUHKuoOVdSOWetHJPZJxz2SccdknHPXByrogxNJJAAA9Dz/Q4AosdmgWaCt2 KnYqdE06JdMktkFsgsILDM0RmaIznVGU6oyjaTGdoMY2kwjaDCN8zGdYIGj0ODv88vTKje8dDa8b Nrxs1vKjWs2avNmjzZo82aEMshlEoolFKUUpQ0pHJIQSEEBm4FBAocAgPQ8/0PPBoLvFnRpyUdlc lnXfHZ11yUdb5WdT5g6nys6jmZ0nOzcwRusEdC50dC50brCTecZNoxk1nGDWM5LhIaAAD0PP9Dzw AAAABiC3mGzwDprlDrfGzsONnZXCzufCHcuIOtciOtcgda5UdK5w2nINJkGgAAAAAAA+l4gAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//2gAIAQIAAQUA/wAo/9oACAEDAAEFAP8AKP/aAAgB AQABBQD+/fvr+7yNwcjcHI3ByNwcjcHI3ByNwcjcHI3ByNwcjcHI3ByNwcjcHI3Bn3Bn3Bn3Bm3B m3Bm3Bm3Bm3Bm3Jm3Bm3Bm3Bm3Bn3Bn3Bn3ByNwcjcHI3ByNwcjcHI3ByNwcjcHI3ByNwcjcHI3B yNwcjcHI3ByNwewee/DQpZSxQYrbFaYrTFZMJhMJhMJhMRiMRhMJhMI7JiMQ7bHbKClmjNPy9g89 9NDQURQFbFaFaFaFaFaFaFaMRiMRiMZjMZjMZjMRiMQ7Q7Q7Q7Q7Q7Q7Q7Q7Y4Diaff2Dz3xoKIo igK2KAoCtitigKAoCgKBQUFBQUFBQUFBQUFBQOA4DgOA4DgO2OA4DgOA4DiNGn09g88JCQokYiiK IoiiKIoiiKIoiiUlJSUlJSUlJSUlJSUlJSOI4jiOI4jiOI4jiOI4kojiNDXz7B55CIoihISIoSEh ISEhISEjQ0NDQ0NDQ0NDQ0NDQ0GhoaGhoaGhoaGhoaGiSGhj+PYPPIREixCIsQhMQmITNRM1Nfx1 NTUbNRsYxjYxjGxjZJjGP49g88JiZGQpCkKQpCkKQpCkKQpFRUVFRUVFRUampUVFRUVFRUOQ5DkO Q5DkOQ5DkORKQ5DY38+wee+ExSFMUxTFMUxTFMUxTFMUysrKysrKyorKysrKysrKyscxzHMcxzHM cxzHMcxyHI1+nsHnvpqKQpiuCuCuCuCuCuCuCuGQyGQyGQyGQyGQyGQyGQyGQyDuDuDuDuDuDuDu DuDmORr9vYPPffVlTFMVwVwV0V0V0ymUymUyiumUymUyjujumUymUd0yjujujuDuDmVM1/H2Dz36 amrKmVMrZWytmRiuMysysysysdxmRlbK2VsqZUzV/v8A2v8An/8AZ6w6w6w6w6w6w6w6w6w6w6w6 w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w6w//9oA CAECAgY/ACj/2gAIAQMCBj8AKP/aAAgBAQEGPwDskTcciJ+XvoiI5f8ARxVfJSq+SlV8lKr5KVXy UqvkpVfJSq+SlV8lKr5KVXyUqvkpVfJSq+SlV8lKr5KVHyUqvkpVfJSq+SlV8lKr5KVXyUqvkpVf JSq+SlV8lKr5KVXyUqPkpVfJSq+SlV8lKr5KVXyUqvkpVfJSq+SlV8lKr5KVXyUqvkpVfJSq+SlV 8lKr5KVXyU7P29/kdqHZ+3v8jtQ7P29/kdqHZ+3v8jtQ7P29/kdqHZ+3v8jtQ7P29/kdqHZ+3v8A I7UOz9vf5Hah2ft7/I7UOz9vf5Hah+f5/oef7O95ef73n8/cd8+X2/6/P18f4+hbsgW7IFuyBbsg W7IFuyBbsgW7IFuyBbsgW7IFuyBbsgW7IFuyBbsgW7IFuyBbsgW7IFuyBbsgW7IFuyBbsgW7IFuy BbsgW7IFuyBbsgW7IFuyBbsgW7IFuyBbsgW7IFuyBbsgW7IFuyBbsgW7IFuyBbsgW7IH/9k="
+          width="381"
+          height="98"
+          overflow="visible"
+          transform="translate(463 1681.3)"
+        ></image>
+      </g>
+    </mask>
+    <g mask="url(#a)">
+      <ellipse
+        cx="653.54"
+        cy="1730.2"
+        fill="#58595B"
+        rx="188.45"
+        ry="46.331"
+      ></ellipse>
+    </g>
+  </svg>
+);
+
+export default positionIcon;

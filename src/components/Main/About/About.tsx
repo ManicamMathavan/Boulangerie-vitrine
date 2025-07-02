@@ -8,7 +8,7 @@ function About() {
          <img src={pate} alt="" />
         <div className={style.aboutContent}>
            
-            <h1>À Propos</h1>
+            <h1 className="title">À Propos</h1>
               <p className="pProperty">
                 Depuis plus de vingt ans, la boulangerie Dego perpétue une tradition
                 familiale passionnée par l’art du pain. Fondée au cœur de notre village,

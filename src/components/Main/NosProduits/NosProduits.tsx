@@ -8,7 +8,7 @@ function NosProduits() {
 
     <div className={style.nosProduits}>
       <div className={style.produitDescription}>
-        <h1>Nos Produits</h1>
+        <h1 className="title">Nos Produits</h1>
         <h2 className="pProperty">Découvrez notre sélection de produits artisanaux.</h2>
       </div>
       <div className={style.produits}>

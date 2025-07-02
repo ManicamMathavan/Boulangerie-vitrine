@@ -8,11 +8,6 @@ function Header(){
                 <h2>La boulangerie Dego</h2>
             </div>
 
-            <div className={style.rightContent}>
-                <p>Accueil</p>
-                <p>Nos produits</p>
-                <p>À propos</p>
-            </div>
 
         </header>
     )
