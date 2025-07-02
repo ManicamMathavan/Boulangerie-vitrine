@@ -1,39 +1,210 @@
-
-.header{
-    background-color: #D2B48C;
+.header {
+    background: #D2B48C;
     display: flex;
-    padding: 10px;
-    margin-bottom: 50px;
+    padding: 10px 20px;
     align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-/* .header .rightContent{
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.header .rightContent {
     margin-left: auto;
     display: flex;
-    gap: 25px;
-    margin-right: 10px;
+    gap: 30px;
+    margin-right: 15px;
     align-content: baseline;
-} */
+    z-index: 1;
+}
 
-.header .leftContent{
-    width: 100vw;
+.header .leftContent {
     display: flex;
-    /* justify-content: end; */
-    gap: 20px;
-    margin-right: 20px;
+    justify-content: end;
+    gap: 25px;
+    margin-right: 25px;
     align-items: center;
+    z-index: 1;
 }
 
-.header p{
- font-family: 'Open Sans', sans-serif;
-color : var(--global-background-color);
-font-size: 23px;
+/* Menu hamburger (caché par défaut) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+    z-index: 1000;
 }
 
-.header h2{
-    font-family: 'Cormorant Garamond', serif;
-    color: var(--global-background-color);
-    font-size: 40px;
-    text-align: center;
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #FFFFFF;
+    transition: all 0.3s ease;
 }
 
+.hamburger.active span:first-child {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:last-child {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Menu mobile */
+.mobileMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #D2B48C;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    z-index: 999;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.mobileMenu.open {
+    transform: translateX(0);
+}
+
+.mobileMenu p {
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-size: 28px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+.mobileMenu p:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header p {
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-size: 23px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.header p:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header h2 {
+    font-family: 'Roboto', serif;
+    color: #FFFFFF;
+    font-size: 42px;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+}
+
+.header img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease;
+}
+
+.header img:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Media queries pour la responsivité */
+@media (max-width: 1000px) {
+    .header {
+        padding: 10px 15px;
+    }
+
+    .header .rightContent {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .header .leftContent {
+        gap: 15px;
+        margin-right: 0;
+    }
+
+    .header h2 {
+        font-size: 28px;
+    }
+
+    .header img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 8px 10px;
+    }
+
+    .header .leftContent {
+        gap: 10px;
+    }
+
+    .header h2 {
+        font-size: 24px;
+    }
+
+    .header img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .hamburger span {
+        width: 22px;
+        height: 2px;
+    }
+}
+
+@media (max-width: 360px) {
+    .header h2 {
+        font-size: 20px;
+    }
+
+    .header img {
+        width: 40px;
+        height: 40px;
+    }
+}
