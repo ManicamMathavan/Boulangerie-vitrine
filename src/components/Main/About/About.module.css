@@ -1,23 +1,219 @@
-
-.about{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap : 50px;
-    flex-wrap: wrap;
+/* Section About moderne et responsive */
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 80px 40px;
+  background: linear-gradient(135deg, #f8f6f0 0%, #f0ebe3 100%);
+  min-height: 500px;
+  position: relative;
+  overflow: hidden;
 }
 
-.about h1{
-    justify-content: center;
+/* Effet de brillance subtle */
+.about::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  animation: shimmer 6s ease-in-out infinite;
+  pointer-events: none;
 }
 
-.about .aboutContent{
-    display: flex;
+@keyframes shimmer {
+  0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* Container de l'image */
+.imageContainer {
+  flex: 1;
+  max-width: 500px;
+  position: relative;
+}
+
+.imageContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(139, 69, 19, 0.15);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.about img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.15),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  object-fit: cover;
+  aspect-ratio: 1.2 / 1;
+}
+
+/* Contenu texte */
+.aboutContent {
+  flex: 1;
+  max-width: 600px;
+  padding: 20px;
+  text-align: left;
+}
+
+.aboutContent h1 {
+  font-size: 2.5rem;
+  color: #8B4513;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.1);
+  position: relative;
+}
+
+.aboutContent h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #D2B48C, #8B4513);
+  border-radius: 2px;
+}
+
+.aboutContent p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #5D4037;
+  margin: 0;
+  text-align: justify;
+  font-weight: 400;
+}
+
+/* Responsive Design */
+
+/* Tablettes */
+@media (max-width: 1024px) {
+  .about {
+    gap: 40px;
+    padding: 60px 30px;
+  }
+  
+  .aboutContent h1 {
+    font-size: 2.2rem;
+  }
+  
+  .aboutContent p {
+    font-size: 1.05rem;
+  }
+}
+
+/* Petites tablettes et grands mobiles */
+@media (max-width: 768px) {
+  .about {
     flex-direction: column;
-    align-items: center;
-    width:500px
+    gap: 40px;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .imageContainer {
+    order: 1;
+    max-width: 400px;
+  }
+  
+  .aboutContent {
+    order: 2;
+    text-align: center;
+    max-width: 100%;
+  }
+  
+  .aboutContent h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .aboutContent h1::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .aboutContent p {
+    font-size: 1rem;
+    text-align: center;
+  }
 }
 
-.about img{
-    width: 500px;
+/* Mobiles */
+@media (max-width: 480px) {
+  .about {
+    gap: 30px;
+    padding: 40px 15px;
+  }
+  
+  .imageContainer {
+    max-width: 300px;
+  }
+  
+  .aboutContent h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .aboutContent p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 320px) {
+  .about {
+    padding: 30px 10px;
+  }
+  
+  .imageContainer {
+    max-width: 280px;
+  }
+  
+  .aboutContent h1 {
+    font-size: 1.6rem;
+  }
+  
+  .aboutContent p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animations supplémentaires pour les interactions */
+.imageContainer:hover img {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.2),
+    0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Amélioration de l'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  .about::before {
+    animation: none;
+  }
+  
+  .imageContainer:hover img {
+    transform: none;
+  }
 }

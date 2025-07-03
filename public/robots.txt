@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://boulangerie-dego.fr/sitemap.xml
+
+# Optimisations pour les moteurs de recherche
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# Fichiers et dossiers à ne pas indexer
+Disallow: /src/
+Disallow: *.json
+Disallow: *.ts
+Disallow: *.tsx
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /.vite/

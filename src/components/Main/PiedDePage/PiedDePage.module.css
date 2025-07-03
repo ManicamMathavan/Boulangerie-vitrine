@@ -1,0 +1,150 @@
+/* Import des variables globales */
+@import '../../../global.css';
+
+/* Pied de page selon cahier des charges */
+.piedDePage {
+  background: linear-gradient(135deg, var(--bois-naturel), #8B7355);
+  padding: var(--spacing-xxl) 0;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xxl);
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.accroche {
+  font-family: var(--font-titres);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.sousAccroche {
+  font-family: var(--font-titres);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: var(--jaune-ble);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.ctaButton {
+  padding: var(--spacing-lg) var(--spacing-xxl); /* CTA plus gros */
+  font-size: 1.4rem; /* Police plus grande */
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--orange-doux), #ff8c00);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(255, 165, 0, 0.3);
+  font-family: var(--font-texte);
+  min-width: 280px; /* Largeur minimale */
+}
+
+.socialSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.socialText {
+  font-family: var(--font-texte);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.socialIcons {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+}
+
+.copyright {
+  font-family: var(--font-texte);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.credits {
+  font-family: var(--font-texte);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .piedDePage {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .container {
+    gap: var(--spacing-xl);
+    padding: 0 var(--spacing-md);
+  }
+  
+  .content {
+    gap: var(--spacing-md);
+  }
+  
+  .ctaButton {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: 1.1rem;
+  }
+  
+  .socialIcons {
+    gap: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .ctaButton {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .footer {
+    text-align: center;
+  }
+}
+
+/* Accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  .ctaButton {
+    transition: none;
+  }
+}

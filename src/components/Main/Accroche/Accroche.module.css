@@ -1,39 +1,294 @@
-.accroche{
-    text-align: center;
-    background-color: var(--global-title-color);
+/* Section Accroche - Design Premium avec Glassmorphism et Gradients */
+.accrocheContainer {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    #667eea 0%,
+    #764ba2 25%,
+    #f093fb 50%,
+    #f5576c 75%,
+    #4facfe 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  overflow: hidden;
 }
 
-.gras{
-    font-weight: bold;
-}
-.accroche h2{
-    color: var(--global-background-color);
-    /* font-size: 40px; */
-}
-.accroche button{
-    width :10em;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    /* border-radius: 5%; */
-    color: var(--global-background-color);
-    background-color: var(--light-orange);
-    
-
+.accrocheContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  z-index: 1;
 }
 
-.accroche button:hover, 
-.accroche button:active{
-    color: var(--global-background-color) !important;
-}
-.accroche button:focus{
-    color: var(--global-background-color);
+.accrocheContainer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: shimmer 3s linear infinite;
+  z-index: 2;
 }
 
-.socialIcons{
-    display: flex;
-    gap: 20px;
-    padding-top: 20px;
-    justify-content: center;
-    margin-bottom: 20px;
-    border-top: var(--global-background-color) 1px solid;
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.accrocheContent {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.titleContainer {
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 700;
+  background: linear-gradient(
+    135deg,
+    #ffd700 0%,
+    #ffed4e 25%,
+    #fff3a0 50%,
+    #ffed4e 75%,
+    #ffd700 100%
+  );
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradientShift 4s ease infinite;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+@keyframes textGradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.ctaButton {
+  position: relative;
+  padding: 1.5rem 4rem; /* CTA plus gros */
+  font-size: 1.4rem; /* Police plus grande */
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e, #ffa8a8);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 10px 30px rgba(255, 107, 107, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 3rem;
+  text-align: center;
+  min-width: 300px; /* Largeur minimale */
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 15px 40px rgba(255, 107, 107, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.ctaButton:hover::before {
+  left: 100%;
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 5px 20px rgba(255, 107, 107, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.ctaButton:focus {
+  outline: none;
+  box-shadow: 
+    0 15px 40px rgba(255, 107, 107, 0.6),
+    0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.socialSection {
+  position: relative;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialIconWrapper {
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.socialIconWrapper::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.socialIconWrapper:hover {
+  transform: translateY(-3px) scale(1.1);
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+.socialIconWrapper:hover::before {
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .accrocheContent {
+    padding: 3rem 1.5rem;
+    margin: 1rem;
+    border-radius: 20px;
+  }
+  
+  .titleContainer {
+    margin-bottom: 2rem;
+  }
+  
+  .title {
+    margin-bottom: 0.8rem;
+  }
+  
+  .ctaButton {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .socialIcons {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .accrocheContent {
+    padding: 2rem 1rem;
+  }
+  
+  .ctaButton {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Animations d'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  .accrocheContainer,
+  .accrocheContainer::after,
+  .subtitle {
+    animation: none;
+  }
+  
+  .ctaButton,
+  .socialIconWrapper {
+    transition: none;
+  }
+}
+
+/* Mode sombre */
+@media (prefers-color-scheme: dark) {
+  .accrocheContent {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .title {
+    color: #f8f9fa;
+  }
+}
+
+/* États de focus améliorés pour l'accessibilité */
+.socialIconWrapper:focus-within {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 4px;
+  border-radius: 50%;
 }

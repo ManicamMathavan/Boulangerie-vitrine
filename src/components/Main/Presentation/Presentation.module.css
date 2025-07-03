@@ -23,6 +23,12 @@
     object-position: center;
 }
 
+/* Styles spécifiques pour le composant OptimizedImage dans le contexte de la présentation */
+.backgroundImage > div {
+    width: 100%;
+    height: 100%;
+}
+
 .overlay {
     position: absolute;
     top: 0;
@@ -66,8 +72,8 @@
     background: linear-gradient(135deg, #d4a574, #b8956a);
     color: #FFFFFF;
     border: none;
-    padding: 1rem 2.5rem;
-    font-size: 1.1rem;
+    padding: 1.5rem 3.5rem;
+    font-size: 1.3rem;
     font-weight: 600;
     border-radius: 50px;
     cursor: pointer;
@@ -77,6 +83,7 @@
     letter-spacing: 1px;
     position: relative;
     overflow: hidden;
+    min-width: 250px;
 }
 
 .ctaButton::before {
@@ -165,4 +172,5 @@
     .ctaButton {
         padding: 1.2rem 3rem;
         font-size: 1.2rem;
-    } }
+    }
+}

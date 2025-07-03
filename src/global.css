@@ -1,17 +1,15 @@
 /* Variables CSS selon le cahier des charges */
 :root {
-  /* Palette de couleurs mise à jour - fond plus grisé */
-  --beige-clair: #E8E8E8; /* Fond principal - gris clair au lieu de beige */
-  --beige-grise: #F0F0F0; /* Variante plus claire */
-  --bois-naturel: #D2B48C; /* Encarts, titres */
-  --orange-doux: #FFA500; /* Boutons, liens, accents */
-  --jaune-ble: #F5DEB3; /* Mises en valeur */
+  --beige-clair: #F5F5DC;
+  --beige-grise: #F0F0F0;
+  --bois-naturel: #D2B48C; 
+  --orange-doux: #FFA500;
+  --jaune-ble: #F5DEB3;
+  --marron-fonce: #8B4513;
   
-  /* Polices selon cahier des charges */
-  --font-titres: 'Playfair Display', serif; /* Empattements traditionnels */
-  --font-texte: 'Open Sans', sans-serif; /* Sans-serif lisible */
+  --font-titres: 'Playfair Display', serif;
+  --font-texte: 'Open Sans', sans-serif;
   
-  /* Espacements et tailles */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
@@ -19,7 +17,6 @@
   --spacing-xl: 3rem;
   --spacing-xxl: 4rem;
   
-  /* Bordures et ombres */
   --border-radius: 8px;
   --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   --box-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
@@ -30,6 +27,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Variables pour la hauteur mobile */
+:root {
+  --vh: 1vh;
 }
 
 /* Scroll fluide global */
@@ -51,7 +53,7 @@ body {
   color: #333;
   line-height: 1.6;
   font-size: 16px;
-  padding-top: 80px; /* Espace pour header fixe */
+  padding-top: 80px;
 }
 
 /* Styles typographiques selon cahier des charges */
@@ -113,11 +115,11 @@ body {
 /* Boutons selon cahier des charges - CTA plus gros */
 .btn-primary {
   display: inline-block;
-  padding: var(--spacing-md) var(--spacing-xl); /* Augmentation du padding */
+  padding: var(--spacing-md) var(--spacing-xl);
   background: linear-gradient(135deg, var(--orange-doux), #ff8c00);
   color: white;
   font-family: var(--font-texte);
-  font-size: 1.2rem; /* Augmentation de la taille de police */
+  font-size: 1.2rem;
   font-weight: 600;
   text-decoration: none;
   border: none;
@@ -126,24 +128,17 @@ body {
   transition: all 0.3s ease;
   box-shadow: var(--box-shadow);
   text-align: center;
-  min-width: 200px; /* Largeur minimale */
+  min-width: 200px;
 }
 
-.btn-primary:hover {
-  background: linear-gradient(135deg, #ff8c00, var(--orange-doux));
-  transform: translateY(-2px);
-  box-shadow: var(--box-shadow-hover);
-  color: white;
-  text-decoration: none;
-}
 
 .btn-secondary {
   display: inline-block;
-  padding: var(--spacing-md) var(--spacing-xl); /* Même augmentation */
+  padding: var(--spacing-md) var(--spacing-xl);
   background: transparent;
   color: var(--bois-naturel);
   font-family: var(--font-texte);
-  font-size: 1.2rem; /* Augmentation de la taille */
+  font-size: 1.2rem;
   font-weight: 600;
   text-decoration: none;
   border: 2px solid var(--bois-naturel);
@@ -151,13 +146,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
-  min-width: 200px; /* Largeur minimale */
-}
-
-.btn-secondary:hover {
-  background: var(--bois-naturel);
-  color: white;
-  text-decoration: none;
+  min-width: 200px;
 }
 
 /* Containers et layouts */
@@ -220,14 +209,15 @@ body {
   box-shadow: var(--box-shadow-hover);
 }
 
-/* Images responsive */
+/* Images responsive avec optimisation de chargement */
 img {
   max-width: 100%;
   height: auto;
   border-radius: var(--border-radius);
+  will-change: transform;
 }
 
-/* Responsive breakpoints */
+/* Responsive breakpoints avec amélioration mobile */
 @media (max-width: 768px) {
   .container {
     padding: 0 var(--spacing-sm);
@@ -240,6 +230,14 @@ img {
   .grid {
     gap: var(--spacing-md);
   }
+  
+  /* Amélioration des boutons sur mobile */
+  .btn-primary,
+  .btn-secondary {
+    min-height: 48px;
+    font-size: 1.1rem;
+    padding: var(--spacing-sm) var(--spacing-lg);
+  }
 }
 
 @media (max-width: 480px) {
@@ -249,6 +247,24 @@ img {
   
   .section-padding {
     padding: var(--spacing-lg) 0;
+  }
+  
+  /* Boutons adaptés aux petits écrans */
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}
+
+/* Amélioration pour les très petits écrans */
+@media (max-width: 320px) {
+  .btn-primary,
+  .btn-secondary {
+    font-size: 0.9rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
   }
 }
 

@@ -1,31 +1,193 @@
+/* Import des variables globales */
+@import '../../../global.css';
+
+/* Section Nos Produits moderne et responsive */
+.nosProduits {
+  padding: 80px 40px;
+  background: linear-gradient(135deg, #faf8f3 0%, #f5f1e8 100%);
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Effet de brillance subtle */
+.nosProduits::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  animation: shimmer 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* Description des produits */
+.produitDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.produitDescription h1 {
+  font-size: 2.8rem;
+  color: var(--marron-fonce);
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.1);
+  position: relative;
+}
+
+.produitDescription h1::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--bois-naturel), var(--marron-fonce));
+  border-radius: 2px;
+}
+
+.produitDescription h2 {
+  font-size: 1.3rem;
+  color: #6D4C41;
+  font-weight: 400;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Grille des produits */
+.produits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Images de produits */
 .nosProduits img {
-    position: absolute;
-    z-index: -1;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
 }
 
 .nosProduits p {
-    size: 200px;
-    font-family: var(--p-font);
-    
+  font-family: var(--p-font, 'Arial, sans-serif');
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-.produitDescription {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+/* Responsive Design */
+
+/* Tablettes */
+@media (max-width: 1024px) {
+  .nosProduits {
+    padding: 60px 30px;
+  }
+  
+  .produitDescription h1 {
+    font-size: 2.4rem;
+  }
+  
+  .produitDescription h2 {
+    font-size: 1.2rem;
+  }
+  
+  .produits {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
 }
 
-.produits{
-    display: flex ;
-    box-sizing: border-box;
-    /* width: fit-content; */
-    margin-left: auto;
-    margin-right: auto;
-    flex-wrap:wrap;
-    /* flex: 1 1 100px; */
-    /* grid-template-rows: repeat(2, 1fr); */
-    justify-content: center;
-    align-content: center;
+/* Petites tablettes et grands mobiles */
+@media (max-width: 768px) {
+  .nosProduits {
+    padding: 50px 20px;
+  }
+  
+  .produitDescription {
+    margin-bottom: 40px;
+  }
+  
+  .produitDescription h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .produitDescription h2 {
+    font-size: 1.1rem;
+  }
+  
+  .produits {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    max-width: 500px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 480px) {
+  .nosProduits {
+    padding: 40px 15px;
+  }
+  
+  .produitDescription h1 {
+    font-size: 1.8rem;
+  }
+  
+  .produitDescription h2 {
+    font-size: 1rem;
+  }
+  
+  .produits {
     gap: 20px;
+    max-width: 350px;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 320px) {
+  .nosProduits {
+    padding: 30px 10px;
+  }
+  
+  .produitDescription h1 {
+    font-size: 1.6rem;
+  }
+  
+  .produitDescription h2 {
+    font-size: 0.95rem;
+  }
+  
+  .produits {
+    max-width: 300px;
+  }
+}
+
+/* Amélioration de l'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  .nosProduits::before {
+    animation: none;
+  }
 }

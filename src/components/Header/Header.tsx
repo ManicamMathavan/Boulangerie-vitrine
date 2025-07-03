@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import style from './Header.module.css';
-import logo from '../../assets/logo.png' // Import SVG logo
+import logo from '../../assets/webp/logo.webp' // Import WebP logo
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,7 +10,36 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const menuItems = ['Accueil', 'Nos produits', 'À propos'];
+  // Configuration des éléments de menu avec leurs sections correspondantes
+  const menuItems = [
+    { label: 'Accueil', sectionId: 'presentation' },
+    { label: 'Nos produits', sectionId: 'nos-produits' },
+    { label: 'À propos', sectionId: 'a-propos' },
+    { label: 'Contact', sectionId: 'contact' },
+    { label: 'Témoignages', sectionId: 'avis-clients' }
+  ];
+
+  // Fonction pour le scroll fluide vers une section
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerHeight = 80; // Hauteur approximative du header
+      const offsetTop = element.offsetTop - headerHeight;
+      
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // Gestion du clic sur un élément de menu
+  const handleMenuClick = (sectionId: string) => {
+    scrollToSection(sectionId);
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  };
 
   return (
     <>
@@ -52,12 +81,13 @@ function Header() {
         >
           {menuItems.map((item) => (
             <motion.p
-              key={item}
+              key={item.sectionId}
               whileHover={{ scale: 1.03, color: "#8B4513" }}
               transition={{ duration: 0.15 }}
               style={{ cursor: 'pointer' }}
+              onClick={() => handleMenuClick(item.sectionId)}
             >
-              {item}
+              {item.label}
             </motion.p>
           ))}
         </motion.div>
@@ -90,20 +120,16 @@ function Header() {
           >
             {menuItems.map((item, index) => (
               <motion.p
-                key={item}
+                key={item.sectionId}
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.3 }}
                 whileHover={{ scale: 1.05, color: "#8B4513" }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  // Ici on peut ajouter la logique pour naviguer vers la section correspondante
-                    console.log(`Naviguer vers ${item}`);
-                }}
+                onClick={() => handleMenuClick(item.sectionId)}
                 style={{ cursor: 'pointer' }}
               >
-                {item}
+                {item.label}
               </motion.p>
             ))}
           </motion.div>

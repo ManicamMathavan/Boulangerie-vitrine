@@ -4,10 +4,16 @@
     padding: 10px 20px;
     align-items: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
     overflow: hidden;
     justify-content: space-between;
     flex-wrap: wrap;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
 
 @keyframes shimmer {
@@ -99,7 +105,7 @@
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
-    padding: 15px 20px;
+    padding: 0px;
     border-radius: 8px;
 }
 
@@ -115,7 +121,8 @@
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
-    padding: 8px 12px;
+    padding: 0px 5px;
+    margin: 0px;
     border-radius: 8px;
 }
 
@@ -146,7 +153,7 @@
 }
 
 /* Media queries pour la responsivité */
-@media (max-width: 1000px) {
+@media (max-width: 1180px) {
     .header {
         padding: 10px 15px;
     }
@@ -207,4 +214,9 @@
         width: 40px;
         height: 40px;
     }
+}
+
+/* Ajuster le body pour compenser le header fixe */
+body {
+    padding-top: 80px;
 }

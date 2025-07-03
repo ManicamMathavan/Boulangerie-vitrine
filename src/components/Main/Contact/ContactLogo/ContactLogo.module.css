@@ -1,12 +1,298 @@
-
-
+/* Carte ContactLogo avec design moderne et élégant */
 .logoWithText {
-    width: 210px;
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 25px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.08),
+    0 5px 15px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Effet de dégradé en arrière-plan */
+.logoWithText::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(210, 180, 140, 0.05) 0%, 
+    rgba(139, 69, 19, 0.03) 50%, 
+    rgba(210, 180, 140, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.logoWithText:hover::before {
+  opacity: 1;
+}
+
+/* Effet de brillance au survol - plus subtil */
+.logoWithText::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  transition: transform 0.8s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.logoWithText:hover::after {
+  opacity: 1;
+  transform: translateX(100%) translateY(100%) rotate(45deg);
+}
+
+/* Container du logo/icône redessiné */
+.logo {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8B4513 0%, #D2B48C 50%, #8B4513 100%);
+  box-shadow: 
+    0 10px 25px rgba(139, 69, 19, 0.25),
+    0 4px 10px rgba(139, 69, 19, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Effet de lumière interne */
+.logo::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  right: 15%;
+  bottom: 15%;
+  background: radial-gradient(circle at 30% 30%, 
+    rgba(255, 255, 255, 0.4) 0%, 
+    rgba(255, 255, 255, 0.1) 40%, 
+    transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Bordure externe au survol */
+.logo::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(135deg, #D2B48C, #8B4513);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.logoWithText:hover .logo::after {
+  opacity: 1;
+}
+
+/* Animation du logo au survol */
+.logoWithText:hover .logo {
+  transform: scale(1.15) translateY(-3px);
+  box-shadow: 
+    0 15px 35px rgba(139, 69, 19, 0.35),
+    0 8px 15px rgba(139, 69, 19, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Texte de description amélioré */
+.logoWithText h2 {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4A4A4A;
+  margin: 0;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.logoWithText:hover h2 {
+  color: #8B4513;
+  transform: translateY(-2px);
+}
+
+/* Effet au clic plus doux */
+.logoWithText:active {
+  transform: scale(0.98) translateY(1px);
+}
+
+/* Animation d'entrée pour les cartes */
+.logoWithText {
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+
+/* Tablettes */
+@media (max-width: 1024px) {
+  .logoWithText {
+    width: 300px;
+    padding: 35px 22px;
+  }
+  
+  .logo {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 20px;
+  }
+  
+  .logoWithText h2 {
+    font-size: 0.95rem;
+  }
+}
+
+/* Petites tablettes et grands mobiles */
+@media (max-width: 768px) {
+  .logoWithText {
+    width: 350px;
+    padding: 40px 30px;
+    margin: 0 auto;
+  }
+  
+  .logo {
+    width: 95px;
+    height: 95px;
+    margin-bottom: 22px;
+  }
+  
+  .logoWithText h2 {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 480px) {
+  .logoWithText {
+    width: 100%;
+    max-width: 320px;
+    padding: 35px 25px;
+    border-radius: 20px;
+  }
+  
+  .logo {
+    width: 85px;
+    height: 85px;
+    margin-bottom: 18px;
+  }
+  
+  .logoWithText h2 {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 320px) {
+  .logoWithText {
+    max-width: 290px;
+    padding: 30px 20px;
+    border-radius: 18px;
+  }
+  
+  .logo {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 15px;
+  }
+  
+  .logoWithText h2 {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+/* Amélioration de l'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  .logoWithText,
+  .logo,
+  .logoWithText h2 {
+    transition: none;
+  }
+  
+  .logoWithText::after {
+    transition: none;
+  }
+  
+  .logoWithText:hover .logo {
+    transform: none;
+  }
+  
+  .logoWithText:hover::after {
+    opacity: 0;
+  }
+  
+  .logoWithText {
+    animation: none;
+  }
+}
+
+/* Mode sombre (si supporté) */
+@media (prefers-color-scheme: dark) {
+  .logoWithText {
+    background: rgba(45, 45, 45, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 15px 35px rgba(0, 0, 0, 0.4),
+      0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .logoWithText h2 {
+    color: #D2B48C;
+  }
+  
+  .logoWithText:hover h2 {
+    color: #F5DEB3;
+  }
+  
+  .logo {
+    background: linear-gradient(135deg, #D2B48C 0%, #F5DEB3 50%, #D2B48C 100%);
+  }
 }
 
 

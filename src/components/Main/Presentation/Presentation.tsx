@@ -1,13 +1,17 @@
 //Presentation.tsx 
 
 import { motion } from "framer-motion";
-import interieur from "../../../assets/interieur.png";
+import interieur from "../../../assets/webp/interieur.webp";
+import OptimizedImage from "../../OptimizedImage/OptimizedImage";
 import style from "./Presentation.module.css";
 
 function About() {
   const handleContactClick = () => {
     // Action pour plus tard quand on créera la page contact
-    console.log('Contacter la boulangerie');
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -19,7 +23,11 @@ function About() {
       viewport={{ once: true, amount: 0.3 }}
     >
       <div className={style.backgroundImage}>
-        <img src={interieur} alt="Intérieur chaleureux de notre boulangerie artisanale" />
+        <OptimizedImage 
+          src={interieur} 
+          alt="Intérieur chaleureux de notre boulangerie artisanale"
+          priority={true}
+        />
       </div>
       
       <div className={style.overlay}></div>
